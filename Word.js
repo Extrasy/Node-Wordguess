@@ -1,4 +1,4 @@
-const Letter = require('Letter.js');
+const Letter = require('./Letter');
 
 function Word(wordString){
 

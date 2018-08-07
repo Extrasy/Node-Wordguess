@@ -1,12 +1,12 @@
-const Word = require('Word.js');
-const inquire = require('inquirer');
+const Word = require('./Word');
+const inquirer = require('inquirer');
 
 var target;
 var targetWord;
 var guesses;
 var guessesLeft;
 
-const wordList = ["Extrasy", "Neviros"];
+const wordList = ["celery", "carrot", "apple", "lettuce", "orange", "watermelon", "onion", "cherry", "asparagus", "tomato", "pear", "raspberry"];
 
 
 function randomWord(wordList){
@@ -19,7 +19,7 @@ const questions = [
         name: 'letterGuessed',
         message: 'Guess a letter',
         validate: function (value){
-            var valid = (value.length === 1) && ([ab-z].indexOf(value.charAt(0).toLowerCase()) !== -1);
+            var valid = (value.length === 1) && (value.search(/[^a-zA-Z]+/) === -1);
             return valid || 'enter a single letter';
         },
         when: function () {
